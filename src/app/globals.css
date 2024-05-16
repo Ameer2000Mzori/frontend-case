@@ -32,7 +32,16 @@ body {
 
 /*  header */
 
-.bg-gradient-radial-right {
+.header-bg-gradient-radial-right {
   background-image: radial-gradient(circle, #020365 0%, #01041f 99.95%);
-  background-position: 250px;
+  background-position: 300px;
+  background-size: cover;
+}
+
+.nav-text {
+  font-size: 18px;
+  font-family: Barlow, 'Courier New', monospace;
+  line-height: 24px;
+  font-style: bold;
+  font-weight: 600;
 }
