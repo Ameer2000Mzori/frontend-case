@@ -15,7 +15,7 @@ export default function Header() {
             <p className=" nav-text ">Home</p>
           </Link>
           <Link href="/blog">
-            <p className="nav-text">About</p>
+            <p className="nav-text">Blog</p>
           </Link>
         </div>
       </div>
