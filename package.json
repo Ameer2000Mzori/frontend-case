@@ -1,0 +1,58 @@
+{
+  "name": "2digits-blog-case",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:web": "next dev --turbo",
+    "dev": "turbo dev:web",
+    "build:web": "next build",
+    "build": "turbo build:web",
+    "start": "next start",
+    "types": "tsc --noEmit",
+    "fix": "pnpm '/(lint|format):fix$/'",
+    "format": "prettier \"**/*\" --ignore-unknown --check --cache",
+    "format:fix": "prettier \"**/*\" --ignore-unknown --write --cache",
+    "lint": "eslint . --ignore-path .gitignore --cache --max-warnings 0",
+    "lint:fix": "eslint . --ignore-path .gitignore --fix --cache",
+    "check": "turbo format lint types",
+    "codegen": "graphql-codegen"
+  },
+  "dependencies": {
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "next": "^14.2.3",
+    "ofetch": "^1.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "server-only": "^0.0.1",
+    "tailwind-variants": "^0.2.1"
+  },
+  "devDependencies": {
+    "@2digits/eslint-config": "^1.5.0",
+    "@2digits/prettier-config": "^2.1.0",
+    "@2digits/tsconfig": "^0.3.4",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/import-types-preset": "^3.0.0",
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-codegen/typescript-generic-sdk": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
+    "turbo": "^1.13.3",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "eslintConfig": {
+    "extends": "@2digits",
+    "ignorePatterns": [
+      "src/server/*/generated/**"
+    ]
+  },
+  "prettier": "@2digits/prettier-config"
+}

@@ -1,0 +1,4 @@
+{
+  "schema": "https://graphql.prepr.io/ba43dc51e5f8f39ca2c5ce142bf9c405989bb1726c971b63ebe363edcbed0eca",
+  "documents": "./src/server/**/*.graphql"
+}

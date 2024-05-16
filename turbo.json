@@ -1,0 +1,35 @@
+{
+  "globalDotEnv": [".env"],
+  "pipeline": {
+    "build:web": {
+      "dependsOn": ["codegen"],
+      "env": ["NODE_ENV", "GRAPHQL_URL"],
+      "outputs": [".next/**", "!.next/cache/**", "next-env.d.ts"]
+    },
+    "dev:web": {
+      "dependsOn": ["codegen"],
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["codegen"],
+      "outputs": ["./.eslintcache"]
+    },
+    "format": {
+      "outputs": ["./node_modules/.cache/prettier/**"]
+    },
+    "types": {
+      "dependsOn": ["codegen"],
+      "outputs": ["./tsconfig.tsbuildinfo"]
+    },
+    "codegen": {
+      "env": ["GRAPHQL_URL"],
+      "inputs": [
+        "./src/server/prepr/schemas/**/*.graphql",
+        "./graphql.config.json",
+        "./codegen.ts"
+      ],
+      "outputs": ["./src/server/prepr/generated/**"]
+    }
+  }
+}
