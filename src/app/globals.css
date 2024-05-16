@@ -45,3 +45,13 @@ body {
   font-style: bold;
   font-weight: 600;
 }
+
+.nav-text-logo {
+  font-size: 38px;
+  height: 28px;
+  font-family: Barlow, 'Courier New', monospace;
+  line-height: 24px;
+  font-style: bold;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
