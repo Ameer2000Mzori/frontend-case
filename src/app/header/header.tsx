@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <div className="header-bg-gradient-radial-right flex h-[80px] w-[100vw] flex-col items-center  text-center ">
+    <div className="header-bg-gradient-radial-right flex h-[80px]  flex-col items-center  text-center ">
       <div className="flex h-[100%] w-[75%]  flex-row items-center justify-between  text-center">
         <Link href="/home" className="flex h-[36px] flex-row items-end justify-end text-end">
           <p className="nav-text-logo"> 2D/G/TS</p>
