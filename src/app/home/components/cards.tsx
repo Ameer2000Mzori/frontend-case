@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BlogCard from '../../shared/blogCard';
+import BlogCard from '../../shared/Card';
 
 export default function Cards() {
   return (
