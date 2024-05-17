@@ -6,7 +6,6 @@ export type blogsInputsType = {
   description?: string;
 };
 
-export const blogsInputs: blogsInputsType = {
+export const blogInputs: blogsInputsType = {
   image: blogBanner,
-  title: 'BLOGS',
 };
