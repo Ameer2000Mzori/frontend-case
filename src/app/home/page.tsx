@@ -1,16 +1,14 @@
 import React from 'react';
 
-import Image from 'next/image';
-
-import HomeBanner from 'public/Home_Banner.png';
-
+import { HeroComponent } from '../shared/heroComponent';
+import { bodyInputs } from '../types';
 import Cards from './components/cards';
 
 export default function body() {
   return (
     <div>
       <div className=" mt-[1px] flex h-[600px]  flex-col items-center justify-center gap-2 overflow-hidden border-t-2 border-white text-center">
-        <Image
+        {/* <Image
           src={HomeBanner}
           alt="Home Banner"
           className="  -z-20 h-[100%] w-[100%] bg-center object-cover"
@@ -25,7 +23,9 @@ export default function body() {
             mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec adipiscing
             tristique risus.
           </p>
-        </div>
+        </div> */}
+
+        <HeroComponent heroInputs={bodyInputs} />
       </div>
       <Cards />
     </div>
