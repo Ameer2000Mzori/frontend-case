@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import cardImg from 'public/card_Img.png';
 
-export default function Card() {
+export default function BlogCard() {
   return (
     <>
       <div className=" flex h-[440px] w-[349px] cursor-pointer flex-col  gap-[24px] text-start">

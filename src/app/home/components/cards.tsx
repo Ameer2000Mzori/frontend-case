@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card from './card';
+import BlogCard from '../../shared/blogCard';
 
 export default function Cards() {
   return (
@@ -10,7 +10,7 @@ export default function Cards() {
           De nieuwste blogs
         </h1>
         <div className=" flex flex-row items-center justify-center gap-[31px] text-center">
-          <Card />
+          <BlogCard />
         </div>
       </div>
     </div>
