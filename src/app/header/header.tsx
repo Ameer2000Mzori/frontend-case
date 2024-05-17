@@ -14,7 +14,7 @@ export default function Header() {
           <Link href="/home">
             <p className=" nav-text ">Home</p>
           </Link>
-          <Link href="/blog">
+          <Link href="/blogs">
             <p className="nav-text">Blog</p>
           </Link>
         </div>
