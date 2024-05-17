@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import cardImg from '../../../public/card_Img.png';
+import Badge from './badge';
 
 export default function BlogCard() {
   return (
@@ -38,6 +39,7 @@ export default function BlogCard() {
               INTERVIEW
             </p>
           </div>
+          <Badge Input={'INTERVIEW'} />
         </div>
 
         <div className=" flex flex-col items-start justify-between gap-[14px] text-start">
