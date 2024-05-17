@@ -1,8 +1,8 @@
 import React from 'react';
 
+import Cards from '../shared/cardsList';
 import { HeroComponent } from '../shared/heroComponent';
 import { bodyInputs } from '../types';
-import Cards from './components/cards';
 
 export default function HomePage() {
   return (
