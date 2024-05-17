@@ -1,4 +1,4 @@
-import HomeBanner from 'public/Home_Banner.png';
+import HomeBanner from '../../../public/Home_Banner.png';
 
 export type bodyInputsType = {
   image?: any;

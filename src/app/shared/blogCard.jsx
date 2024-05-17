@@ -2,7 +2,7 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import cardImg from 'public/card_Img.png';
+import cardImg from '../../../public/card_Img.png';
 
 export default function BlogCard() {
   return (

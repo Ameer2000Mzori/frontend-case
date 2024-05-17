@@ -1,4 +1,4 @@
-import blogHeader from 'public/blogs_Header.png';
+import blogBanner from '../../../public/blogs_Banner.png';
 
 export type blogsInputsType = {
   image: any;
@@ -7,6 +7,6 @@ export type blogsInputsType = {
 };
 
 export const blogsInputs: blogsInputsType = {
-  image: blogHeader,
+  image: blogBanner,
   title: 'BLOGS',
 };
