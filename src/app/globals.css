@@ -55,3 +55,20 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
 }
+
+/*  titles and texts  */
+
+.title-text {
+  font-family: Barlow, 'Courier New', monospace;
+  font-weight: 700;
+  color: #0e1527;
+}
+
+.description-text {
+  font-family: Barlow, 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+  color: #0e1527;
+}
