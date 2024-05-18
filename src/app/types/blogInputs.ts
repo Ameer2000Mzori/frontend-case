@@ -1,4 +1,4 @@
-import blogBanner from '../../../public/blogs_Banner.png';
+import blogBanner from '@/public/blogs_Banner.png';
 
 export type blogsInputsType = {
   image?: any;

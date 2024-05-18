@@ -1,8 +1,11 @@
 import React from 'react';
 
-import Badge from '../shared/badge';
-import { HeroComponent } from '../shared/heroComponent';
-import { blogsInputs } from '../types/blogsInputs';
+import Image from 'next/image';
+
+import Badge from 'app/shared/badge';
+import Cards from 'app/shared/cardsList';
+import { HeroComponent } from 'app/shared/heroComponent';
+import { blogsInputs } from 'app/types/blogsInputs';
 
 export default function BlogPost() {
   return (
@@ -11,9 +14,9 @@ export default function BlogPost() {
         <HeroComponent heroInputs={blogsInputs} />
       </div>
 
-      <div className=" flex h-[auto] w-[100%] flex-col items-center justify-start bg-white  text-start text-[#0E1527]">
+      <div className=" flex h-[auto] w-[100%] flex-col items-center justify-start bg-white pb-[80px]  text-start text-[#0E1527]">
         <div className=" mt-[55px] flex h-[auto] w-[80%] flex-col items-start justify-start pt-[15px] text-start text-[0E1527]">
-          <div className=" relative  h-[32px]   bg-white ">
+          <div className=" relative  h-[32px] bg-white">
             <Badge Input="INTERVIEW" />
           </div>
           <h2 className=" title-text w-[70%] text-[48px] leading-[56px]">
@@ -68,7 +71,7 @@ export default function BlogPost() {
             H5 - Wordpress
           </h4>
 
-          <p className="title-text mt-[16px]   w-[70%] text-[16px] leading-[17px]">
+          <p className="description-text mt-[16px]    w-[82%] text-[16px] leading-[17px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Magnis dis parturient montes nascetur
             ridiculus mus mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec
@@ -76,7 +79,7 @@ export default function BlogPost() {
             molestie nunc non blandit massa enim nec dui.
           </p>
 
-          <ul className="title-text mt-[16px] w-[70%]  list-disc pl-[25px] text-[16px] leading-[17px] ">
+          <ul className="description-text mt-[16px] w-[70%]  list-disc pl-[25px] text-[16px] leading-[17px] ">
             <li>Tellus id interdum velit laoreet id donec. </li>
             <li>
               Eu scelerisque felis imperdiet proin. Blandit libero volutpat sed cras ornare arcu
@@ -86,7 +89,34 @@ export default function BlogPost() {
             <li>Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. </li>
             <li>At elementum eu facilisis sed odio morbi quis commodo.</li>
           </ul>
+
+          <div className="mt-[32px] h-[617px] w-[823px]">
+            <Image
+              className=" h-[100%] w-[100%] object-cover object-center"
+              src={blogsInputs.image}
+              alt="blog_image"
+            />
+          </div>
+
+          <h1 className=" title-text mt-[32px] w-[700] font-Barlow text-[36px]">Table tennis</h1>
+
+          <p className="description-text mt-[24px] w-[82%]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Magnis dis parturient montes nascetur
+            ridiculus mus mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec
+            adipiscing tristique risus. Eu sem integer vitae justo eget magna fermentum. Tellus
+            molestie nunc non blandit massa enim nec dui.
+            <br />
+            <br />
+            Tellus id interdum velit laoreet id donec. Eu scelerisque felis imperdiet proin. Blandit
+            libero volutpat sed cras ornare arcu dui. Euismod in pellentesque massa placerat duis.
+            Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. At elementum eu
+            facilisis sed odio morbi quis commodo.
+          </p>
         </div>
+      </div>
+      <div className="h-[642px] w-[100%] bg-[#EFEFF8]">
+        <Cards />
       </div>
     </div>
   );

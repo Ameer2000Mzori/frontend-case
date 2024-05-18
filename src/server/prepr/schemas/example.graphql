@@ -1,7 +1,17 @@
 query Example {
   Page(slug: "/") {
+    _id
+    title
+    _slug
     page_header {
+      _id
       title
+      image {
+        _id
+        url
+      }
+      text
     }
+    html
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { HeroComponent } from '../shared/heroComponent';
-import { blogsInputs } from '../types/blogsInputs';
+import { HeroComponent } from 'app/shared/heroComponent';
+import { blogsInputs } from 'app/types/blogsInputs';
 
 export default function blog() {
   return (

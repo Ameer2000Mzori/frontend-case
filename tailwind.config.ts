@@ -9,6 +9,7 @@ const config = withTV({
   theme: {
     fontFamily: {
       Barlow: ['Barlow'],
+      firaSans: ['"Fira Sans"', 'sans-serif'],
     },
     extend: {
       backgroundImage: {
