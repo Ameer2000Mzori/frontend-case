@@ -2,30 +2,17 @@ import React from 'react';
 
 import Cards from 'app/shared/cardsList';
 import { HeroComponent } from 'app/shared/heroComponent';
-import { bodyInputs } from 'app/types';
+import { bodyInputs, bodyInputsType } from 'app/types';
 
 import { PreprSdk } from '@/src/server/prepr';
 
-interface PageData {
-  Page: {
-    page_header: {
-      title: string;
-      _id: string;
-    };
-  };
-}
-export default function HomePage() {
-  const fetchData = async () => {
-    try {
-      const response = await PreprSdk.Example({ Slug: '/blog' });
-      console.log(response);
-    } catch (err: any) {
-      console.log(err);
-    } finally {
-    }
-  };
+export default async function HomePage() {
+  const response = await PreprSdk.Example({ id: '597d4a8e-baaa-4e5a-8712-7ebc55314e11' });
+  console.log(response.Page);
 
-  fetchData();
+  bodyInputs.title = response?.Page?.page_header?.title;
+  bodyInputs.description = response?.Page?.page_header?.text;
+  bodyInputs.image = response?.Page?.page_header?.image?.url;
 
   return (
     <div>

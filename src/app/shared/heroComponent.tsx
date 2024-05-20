@@ -9,10 +9,15 @@ type HeroComponentProps = {
 };
 
 export const HeroComponent: React.FC<HeroComponentProps> = ({ heroInputs }) => {
+  const imageWidth = 4000; // Specify the width
+  const imageHeight = 3000; // Specify the height (ensure this matches the image's aspect ratio)
+
   return (
     <>
       <Image
         src={heroInputs.image}
+        width={imageWidth}
+        height={imageHeight}
         alt="hero image"
         className="  -z-20 h-[100%] w-[100%] bg-center object-cover"
       />

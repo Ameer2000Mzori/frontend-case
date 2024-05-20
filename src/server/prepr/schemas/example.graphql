@@ -1,5 +1,5 @@
-query Example {
-  Page(slug: "/") {
+query Example($id: String!) {
+  Page(id: $id) {
     _id
     title
     _slug
