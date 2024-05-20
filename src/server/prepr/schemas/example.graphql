@@ -47,3 +47,27 @@ query relatedBlog($similarBlogsId: String!, $limit: Int) {
     }
   }
 }
+
+query search_Blogs($where: BlogWhereInput) {
+  Blogs(where: $where) {
+    items {
+      title
+      _id
+      banner_image {
+        url
+      }
+    }
+  }
+}
+
+query search_tag($where: BlogWhereInput) {
+  Blogs(where: $where) {
+    items {
+      title
+      categories {
+        body
+        slug
+      }
+    }
+  }
+}

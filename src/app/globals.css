@@ -108,3 +108,13 @@ body {
   line-height: 24px;
   color: #0e1527;
 }
+
+@media screen and (max-width: 1150px) {
+  .topic-btn-styles {
+    border-radius: 4px;
+    border: 1px solid #efeff8;
+    background-color: #ffffff;
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+}
