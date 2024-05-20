@@ -21,12 +21,14 @@ export const HeroComponent: React.FC<HeroComponentProps> = ({ heroInputs }) => {
       />
 
       <div className=" absolute flex w-[100%] flex-col items-center justify-center gap-[32px] text-center">
-        <h1 className=" z-10  w-[60%] font-Barlow text-[72px] font-bold leading-[72px] text-white">
+        <h1 className=" xlg:text-[72px]  xlg:leading-[72px] xlg:w-[60%] z-10  w-[75%] font-Barlow text-[40px] font-bold leading-[35px] text-white">
           {heroInputs.title}
         </h1>
 
         {heroInputs.description ? (
-          <p className="w-[70%] text-[18px] font-bold leading-[24px]"> {heroInputs.description}</p>
+          <p className="xlg:text-[18px] xlg:w-[70%] w-[90%] text-[14px] font-bold leading-[24px]">
+            {heroInputs.description}
+          </p>
         ) : null}
       </div>
     </>

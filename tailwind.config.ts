@@ -12,6 +12,16 @@ const config = withTV({
       firaSans: ['"Fira Sans"', 'sans-serif'],
     },
     extend: {
+      screens: {
+        '2xs': '320px',
+        xs: '480px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xlg: '1180px',
+        xl: '1480px',
+      },
+
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

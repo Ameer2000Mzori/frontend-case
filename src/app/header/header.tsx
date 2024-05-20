@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <div className="flex h-[80px] flex-col items-center bg-gradient-to-r  from-[#01041f] to-[#020365]  text-center ">
-      <div className="flex h-[100%] w-[80%]  flex-row items-center justify-between  text-center">
+      <div className="xlg:w-[80%] flex h-[100%] w-[90%]  flex-row items-center justify-between  text-center">
         <Link href="/home" className="flex h-[36px] flex-row items-end justify-end text-end">
           <p className="nav-text-logo">
             2D<i>I</i>G<i>I</i>TS

@@ -129,7 +129,7 @@ export default async function BlogPost() {
         </div>
       </div>
       <div className="h-[642px] w-[100%] bg-[#EFEFF8]">
-        <Cards cardsData={cardsData} />
+        <Cards title={'Gerelateerde blogs'} cardsData={cardsData} />
       </div>
     </div>
   );

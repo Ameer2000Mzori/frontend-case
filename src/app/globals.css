@@ -57,6 +57,18 @@ body {
   letter-spacing: 2px;
 }
 
+@media screen and (max-width: 1150px) {
+  .nav-text-logo {
+    font-size: 25px;
+    height: 28px;
+    font-family: Barlow, 'Courier New', monospace;
+
+    font-style: bold;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+}
+
 /*  titles and texts  */
 
 .title-text {
