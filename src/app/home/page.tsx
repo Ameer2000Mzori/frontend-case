@@ -2,13 +2,18 @@ import React from 'react';
 
 import Cards from 'app/shared/cardsList';
 import { HeroComponent } from 'app/shared/heroComponent';
-import { bodyInputs, bodyInputsType } from 'app/types';
+import { pagesTypes } from 'app/types/pagesTypes';
 
 import { PreprSdk } from '@/src/server/prepr';
 
+const bodyInputs: pagesTypes = {
+  image: '',
+  title: '',
+  description: '',
+};
+
 export default async function HomePage() {
   const response = await PreprSdk.pages({ id: '597d4a8e-baaa-4e5a-8712-7ebc55314e11' });
-  console.log(response.Page);
 
   bodyInputs.title = response?.Page?.page_header?.title;
   bodyInputs.description = response?.Page?.page_header?.text;

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Badge from 'app/shared/badge';
 import Cards from 'app/shared/cardsList';
 import { HeroComponent } from 'app/shared/heroComponent';
-import { blogsInputs } from 'app/types/blogsInputs';
 
 import { PreprSdk } from '@/src/server/prepr';
 
@@ -28,15 +27,15 @@ export default async function BlogPost() {
       </div>
 
       <div className=" flex h-[auto] w-[100%] flex-col items-center justify-start bg-white pb-[80px]  text-start text-[#0E1527]">
-        <div className=" mt-[55px] flex h-[auto] w-[80%] flex-col items-start justify-start pt-[15px] text-start text-[0E1527]">
+        <div className=" xlg:w-[80%] mt-[55px] flex h-[auto] w-[90%] flex-col items-start justify-start pt-[15px] text-start text-[0E1527]">
           <div className=" relative  h-[32px] bg-white">
             <Badge Input="INTERVIEW" />
           </div>
-          <h2 className=" title-text w-[70%] text-[48px] leading-[56px]">
+          <h2 className=" title-text xlg:w-[70%] xlg:text-[48px] w-[100%] text-[35px] leading-[56px]">
             H2 - Working at 2DIGITS, according to developer Ryence
           </h2>
 
-          <p className="description-text mt-[32px] w-[82%] ">
+          <p className="description-text xlg:w-[82%] mt-[32px] w-[90%] ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Magnis dis parturient montes nascetur
             ridiculus mus mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec
@@ -44,11 +43,11 @@ export default async function BlogPost() {
             molestie nunc non blandit massa enim nec dui.
           </p>
 
-          <h3 className="title-text mt-[32px]  w-[70%] text-[36px] leading-[56px] ">
+          <h3 className="title-text xlg:w-[70%]  mt-[32px] w-[90%] text-[36px] leading-[56px] ">
             H3 - Wordpress
           </h3>
 
-          <p className="description-text mt-[24px] w-[82%]">
+          <p className="description-text xlg:w-[82%] mt-[24px] w-[90%]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Magnis dis parturient montes nascetur
             ridiculus mus mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec
@@ -62,11 +61,11 @@ export default async function BlogPost() {
             facilisis sed odio morbi quis commodo.
           </p>
 
-          <h4 className="title-text mt-[24px]   w-[70%] text-[21px] leading-[23px]">
+          <h4 className="title-text xlg:w-[70%] mt-[24px] w-[90%] text-[21px] leading-[23px]">
             H4 - Wordpress
           </h4>
 
-          <p className="description-text mt-[16px] w-[82%]">
+          <p className="description-text xlg:w-[82%] mt-[16px] w-[90%]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Magnis dis parturient montes nascetur
             ridiculus mus mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec
@@ -80,11 +79,11 @@ export default async function BlogPost() {
             facilisis sed odio morbi quis commodo.
           </p>
 
-          <h4 className="title-text mt-[24px]  w-[70%] text-[18px] leading-[24px]">
+          <h4 className="title-text xlg:w-[70%]  mt-[24px] w-[90%] text-[18px] leading-[24px]">
             H5 - Wordpress
           </h4>
 
-          <p className="description-text mt-[16px]    w-[82%] text-[16px] leading-[17px]">
+          <p className="description-text xlg:w-[82%]  mt-[16px] w-[90%] text-[16px] leading-[17px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Magnis dis parturient montes nascetur
             ridiculus mus mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec
@@ -92,7 +91,7 @@ export default async function BlogPost() {
             molestie nunc non blandit massa enim nec dui.
           </p>
 
-          <ul className="description-text mt-[16px] w-[70%]  list-disc pl-[25px] text-[16px] leading-[17px] ">
+          <ul className="description-text xlg:w-[70%] mt-[16px]  w-[90%] list-disc pl-[25px] text-[16px] leading-[17px] ">
             <li>Tellus id interdum velit laoreet id donec. </li>
             <li>
               Eu scelerisque felis imperdiet proin. Blandit libero volutpat sed cras ornare arcu
@@ -103,7 +102,7 @@ export default async function BlogPost() {
             <li>At elementum eu facilisis sed odio morbi quis commodo.</li>
           </ul>
 
-          <div className="mt-[32px] h-[617px] w-[823px]">
+          <div className="xlg:w-[823px] xlg:h-[617px] mt-[32px] h-[250px] ">
             <Image
               className=" h-[100%] w-[100%] object-cover object-center"
               src={blogsInputs.image}
@@ -111,9 +110,11 @@ export default async function BlogPost() {
             />
           </div>
 
-          <h1 className=" title-text mt-[32px] w-[700] font-Barlow text-[36px]">Table tennis</h1>
+          <h1 className=" title-text xlg:w-[70%] mt-[32px] w-[90%] font-Barlow text-[30px]">
+            Table tennis
+          </h1>
 
-          <p className="description-text mt-[24px] w-[82%]">
+          <p className="description-text xlg:w-[82%] mt-[24px] w-[90%]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Magnis dis parturient montes nascetur
             ridiculus mus mauris vitae ultricies. Commodo odio aenean sed adipiscing diam donec
@@ -128,7 +129,7 @@ export default async function BlogPost() {
           </p>
         </div>
       </div>
-      <div className="h-[642px] w-[100%] bg-[#EFEFF8]">
+      <div className="xlg:h-[642px] h-[auto] w-[100%] bg-[#EFEFF8]">
         <Cards title={'Gerelateerde blogs'} cardsData={cardsData} />
       </div>
     </div>

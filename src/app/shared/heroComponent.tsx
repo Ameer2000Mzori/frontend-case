@@ -2,10 +2,10 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import { bodyInputsType } from 'app/types';
+import { pagesTypes } from 'app/types';
 
 type HeroComponentProps = {
-  heroInputs: bodyInputsType;
+  heroInputs: pagesTypes;
 };
 
 export const HeroComponent: React.FC<HeroComponentProps> = ({ heroInputs }) => {
@@ -26,7 +26,7 @@ export const HeroComponent: React.FC<HeroComponentProps> = ({ heroInputs }) => {
         </h1>
 
         {heroInputs.description ? (
-          <p className="xlg:text-[18px] xlg:w-[70%] w-[90%] text-[14px] font-bold leading-[24px]">
+          <p className="xlg:text-[18px] xlg:w-[70%] w-[85%] text-[14px] font-bold leading-[24px]">
             {heroInputs.description}
           </p>
         ) : null}

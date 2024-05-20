@@ -94,3 +94,17 @@ body {
   background-position: top;
   object-fit: cover;
 }
+
+/* topics buttons style */
+
+.topic-btn-styles {
+  border-radius: 4px;
+  border: 1px solid #efeff8;
+  background-color: #ffffff;
+  padding: 4px 16px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #0e1527;
+}
