@@ -7,7 +7,20 @@ import Cards from 'app/shared/cardsList';
 import { HeroComponent } from 'app/shared/heroComponent';
 import { blogsInputs } from 'app/types/blogsInputs';
 
-export default function BlogPost() {
+import { PreprSdk } from '@/src/server/prepr';
+
+export default async function BlogPost() {
+  let cardsData: Array<any> = [];
+  const cardsResponse = await PreprSdk.relatedBlog({
+    similarBlogsId: 'f4ae37a2-2a7f-450e-b7b7-2e8a996e2c09',
+    limit: 3,
+  });
+  if (cardsResponse?.Similar_Blogs?.items) {
+    cardsData = cardsResponse.Similar_Blogs.items;
+  }
+
+  console.log('everything is here', cardsData);
+
   return (
     <div>
       <div className=" flex h-[300px]  flex-col items-center justify-center gap-2 overflow-hidden  text-center">
@@ -116,7 +129,7 @@ export default function BlogPost() {
         </div>
       </div>
       <div className="h-[642px] w-[100%] bg-[#EFEFF8]">
-        <Cards />
+        <Cards cardsData={cardsData} />
       </div>
     </div>
   );

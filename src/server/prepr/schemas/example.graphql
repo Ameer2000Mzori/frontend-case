@@ -1,4 +1,4 @@
-query Example($id: String!) {
+query pages($id: String!) {
   Page(id: $id) {
     _id
     title
@@ -13,5 +13,37 @@ query Example($id: String!) {
       text
     }
     html
+  }
+}
+
+query latestBlogs($skip: Int, $limit: Int) {
+  Blogs(skip: $skip, limit: $limit) {
+    items {
+      _last_published_on
+      title
+      _id
+      categories {
+        body
+        slug
+      }
+      banner_image {
+        url
+      }
+    }
+  }
+}
+
+query relatedBlog($similarBlogsId: String!, $limit: Int) {
+  Similar_Blogs(id: $similarBlogsId, limit: $limit) {
+    items {
+      title
+      _id
+      banner_image {
+        url
+      }
+      categories {
+        body
+      }
+    }
   }
 }

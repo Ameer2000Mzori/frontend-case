@@ -7,12 +7,19 @@ import { bodyInputs, bodyInputsType } from 'app/types';
 import { PreprSdk } from '@/src/server/prepr';
 
 export default async function HomePage() {
-  const response = await PreprSdk.Example({ id: '597d4a8e-baaa-4e5a-8712-7ebc55314e11' });
+  const response = await PreprSdk.pages({ id: '597d4a8e-baaa-4e5a-8712-7ebc55314e11' });
   console.log(response.Page);
 
   bodyInputs.title = response?.Page?.page_header?.title;
   bodyInputs.description = response?.Page?.page_header?.text;
   bodyInputs.image = response?.Page?.page_header?.image?.url;
+
+  let cardsData: Array<any> = [];
+
+  const cardsResponse = await PreprSdk.latestBlogs({ skip: 0, limit: 3 });
+  if (cardsResponse?.Blogs?.items) {
+    cardsData = cardsResponse.Blogs.items;
+  }
 
   return (
     <div>
@@ -20,7 +27,7 @@ export default async function HomePage() {
         <HeroComponent heroInputs={bodyInputs} />
       </div>
       <div className="bg-white">
-        <Cards />
+        <Cards cardsData={cardsData} />
       </div>
     </div>
   );

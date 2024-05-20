@@ -72,3 +72,13 @@ body {
   letter-spacing: 0.2px;
   color: #0e1527;
 }
+
+/*   components image styling  */
+
+.styled-image {
+  z-index: -20;
+  height: 100%;
+  width: 100%;
+  background-position: top;
+  object-fit: cover;
+}

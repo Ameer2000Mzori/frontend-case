@@ -1,8 +1,12 @@
 import React from 'react';
 
+import Link from 'next/link';
+
 import BlogCard from './card';
 
-export default function Cards() {
+export default async function Cards({ cardsData }: any) {
+  console.log('dataaaaaaaaa', cardsData);
+
   return (
     <div className="flex h-[690px] w-[100%] flex-col  items-center justify-center ">
       <div className="ga-[32px]  flex h-[530px] w-[80%] flex-col justify-between  text-[#041527]">
@@ -10,7 +14,15 @@ export default function Cards() {
           De nieuwste blogs
         </h1>
         <div className=" flex flex-row items-center justify-center gap-[31px]  text-center">
-          <BlogCard />
+          {cardsData.map((data) => {
+            return (
+              <>
+                <Link rel="stylesheet" href={`/selected/${data._id}`}>
+                  <BlogCard cardData={data} />
+                </Link>
+              </>
+            );
+          })}
         </div>
       </div>
     </div>

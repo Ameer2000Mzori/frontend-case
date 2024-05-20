@@ -3,10 +3,19 @@ import React from 'react';
 import { HeroComponent } from 'app/shared/heroComponent';
 import { blogsInputs } from 'app/types/blogsInputs';
 
-export default function blog() {
+import { PreprSdk } from '@/src/server/prepr';
+
+export default async function blog() {
+  const response = await PreprSdk.pages({ id: '3837c994-0641-410f-bad5-c907db5f35a8' });
+  // console.log(response.Page);
+
+  blogsInputs.title = response?.Page?.page_header?.title;
+  blogsInputs.description = response?.Page?.page_header?.text;
+  blogsInputs.image = response?.Page?.page_header?.image?.url;
+
   return (
     <div>
-      <div className=" mt-[1px] flex h-[300px]  flex-col items-center justify-center gap-2 overflow-hidden  text-center">
+      <div className="  inset-0 flex h-[300px] flex-col items-center justify-center gap-2 overflow-hidden  text-center ">
         <HeroComponent heroInputs={blogsInputs} />
       </div>
       <div className="flex h-[152px] w-[100%] flex-col items-center justify-center border-l-gray-100 bg-[#EFEFF8] text-center ">

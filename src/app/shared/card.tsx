@@ -2,25 +2,34 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import cardImg from '@/public/card_Img.png';
-
 import Badge from './badge';
 
-export default function BlogCard() {
+export default function BlogCard({ cardData }: any) {
+  console.log('this is card data ', cardData.categories);
   return (
     <>
       <div className=" flex h-[440px] w-[349px] cursor-pointer flex-col  gap-[24px] text-start">
         <div className=" relative  h-[240px] w-[100%] overflow-hidden rounded-[6px] bg-black">
-          <Image src={cardImg} alt="card image" className=" -z-10 h-[100%] w-[100%] object-cover" />
+          <Image
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            // className="-z-20 h-[100%] w-[100%] bg-center object-cover "
+            src={cardData.banner_image.url}
+            alt="card image"
+            className=" h-[100%] w-[100%] object-cover"
+          />
 
           <div className="pl-[8px]">
-            <Badge Input={'INTERVIEW'} />
+            {cardData.categories.map((category: any) => {
+              return <Badge Input={category.body} />;
+            })}
           </div>
         </div>
 
         <div className=" flex flex-col items-start justify-between gap-[14px] text-start">
           <h2 className="h-[50px] w-[100%] font-Barlow text-[21px] font-bold leading-[23px]">
-            Werken bij Social Brothers, volgens developer Ryence
+            {cardData.title}
           </h2>
 
           <p className=" h-[72px] w-[100%] font-firaSans text-[16px] leading-[19px]">
@@ -28,7 +37,7 @@ export default function BlogCard() {
             vestibulum, in tristique risus tincidunt.
           </p>
 
-          <button className="flex ">
+          <button className="flex  gap-4 font-bold">
             Lees meer
             <img
               width="25"
