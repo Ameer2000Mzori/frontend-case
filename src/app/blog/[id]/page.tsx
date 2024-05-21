@@ -1,13 +1,12 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import Badge from 'app/shared/badge';
 import Cards from 'app/shared/cardsList';
 import { HeroComponent } from 'app/shared/heroComponent';
-import BlogImg from 'public/blog_img.webp';
 
 import { PreprSdk } from '@/src/server/prepr';
+
+import { pagesTypes } from '../../types/pagesTypes';
 
 const bodyInputs: pagesTypes = {
   image: '',
