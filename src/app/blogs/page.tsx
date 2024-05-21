@@ -18,7 +18,7 @@ const bodyInputs: pagesTypes = {
 
 export default async function Blog() {
   const response = await PreprSdk.pages({ id: '3837c994-0641-410f-bad5-c907db5f35a8' });
-  const blogTagResponse = await PreprSdk.search_tag({ where: { _tags_any: null } });
+  const blogTagResponse = await PreprSdk.search_tag({ where: { _tags_any: null }, limit: null });
   const blogs = blogTagResponse?.Blogs?.items;
 
   bodyInputs.title = response?.Page?.page_header?.title;

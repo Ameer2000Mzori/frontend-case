@@ -60,8 +60,8 @@ query search_Blogs($where: BlogWhereInput) {
   }
 }
 
-query search_tag($where: BlogWhereInput) {
-  Blogs(where: $where) {
+query search_tag($where: BlogWhereInput, $limit: Int) {
+  Blogs(where: $where, limit: $limit) {
     items {
       title
       _id
@@ -71,18 +71,6 @@ query search_tag($where: BlogWhereInput) {
       categories {
         body
         slug
-      }
-    }
-  }
-}
-
-query allBlogs($limit: Int, $skip: Int) {
-  Blogs(limit: $limit, skip: $skip) {
-    items {
-      title
-      _id
-      banner_image {
-        url
       }
     }
   }

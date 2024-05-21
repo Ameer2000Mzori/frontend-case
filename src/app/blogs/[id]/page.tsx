@@ -27,6 +27,7 @@ export default async function Blog({ ...params }: { params: { id: string; search
   const response = await PreprSdk.pages({ id: '3837c994-0641-410f-bad5-c907db5f35a8' });
   const blogTagResponse = await PreprSdk.search_tag({
     where: { _tags_any: id, _search: search },
+    limit: null,
   });
 
   const blogs = blogTagResponse?.Blogs?.items;
