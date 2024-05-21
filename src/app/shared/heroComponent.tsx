@@ -2,7 +2,7 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import { pagesTypes } from 'app/types';
+import { pagesTypes } from 'app/types/pagesTypes';
 
 type HeroComponentProps = {
   heroInputs: pagesTypes;
@@ -17,7 +17,7 @@ export const HeroComponent: React.FC<HeroComponentProps> = ({ heroInputs }) => {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
-        className="-z-20 h-[100%] w-[100%] bg-center object-cover "
+        className="-z-20 h-[100%] w-[100%] bg-center object-cover opacity-50 grayscale"
       />
 
       <div className=" absolute flex w-[100%] flex-col items-center justify-center gap-[32px] text-center">

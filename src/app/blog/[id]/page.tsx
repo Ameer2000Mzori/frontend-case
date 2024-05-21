@@ -8,17 +8,18 @@ import { HeroComponent } from 'app/shared/heroComponent';
 
 import { PreprSdk } from '@/src/server/prepr';
 
-export default async function BlogPost() {
+export default async function BlogPost({ params }: { params: { id: string } }) {
   let cardsData: Array<any> = [];
   const cardsResponse = await PreprSdk.relatedBlog({
-    similarBlogsId: 'f4ae37a2-2a7f-450e-b7b7-2e8a996e2c09',
+    similarBlogsId: params.id,
     limit: 3,
   });
   if (cardsResponse?.Similar_Blogs?.items) {
     cardsData = cardsResponse.Similar_Blogs.items;
   }
 
-  console.log('everything is here', cardsData);
+  const blogsInputs = 'blog';
+  // console.log('everything is here', cardsData);
 
   return (
     <div>
@@ -103,11 +104,7 @@ export default async function BlogPost() {
           </ul>
 
           <div className="xlg:w-[823px] xlg:h-[617px] mt-[32px] h-[250px] ">
-            <Image
-              className=" h-[100%] w-[100%] object-cover object-center"
-              src={blogsInputs.image}
-              alt="blog_image"
-            />
+            <Image className=" h-[100%] w-[100%] object-cover object-center" alt="blog_image" />
           </div>
 
           <h1 className=" title-text xlg:w-[70%] mt-[32px] w-[90%] font-Barlow text-[30px]">

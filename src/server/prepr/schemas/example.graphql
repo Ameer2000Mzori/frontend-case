@@ -64,9 +64,25 @@ query search_tag($where: BlogWhereInput) {
   Blogs(where: $where) {
     items {
       title
+      _id
+      banner_image {
+        url
+      }
       categories {
         body
         slug
+      }
+    }
+  }
+}
+
+query allBlogs($limit: Int, $skip: Int) {
+  Blogs(limit: $limit, skip: $skip) {
+    items {
+      title
+      _id
+      banner_image {
+        url
       }
     }
   }

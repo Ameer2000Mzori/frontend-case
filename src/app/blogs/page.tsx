@@ -1,11 +1,10 @@
 import React from 'react';
 
 import { HeroComponent } from 'app/shared/heroComponent';
+import { Topics } from 'app/shared/topics';
 import { pagesTypes } from 'app/types/pagesTypes';
 
 import { PreprSdk } from '@/src/server/prepr';
-
-import { Topics } from '../shared/topics';
 
 const bodyInputs: pagesTypes = {
   image: '',
@@ -23,11 +22,11 @@ export default async function blog() {
   return (
     <>
       <div>
-        <div className="  xlg:h-[300px] inset-0 flex h-[250px] flex-col items-center justify-center gap-2 overflow-hidden  text-center ">
+        <div className="  inset-0 flex h-[250px] flex-col items-center justify-center gap-2 overflow-hidden text-center  xlg:h-[300px] ">
           <HeroComponent heroInputs={bodyInputs} />
         </div>
         <div className="flex h-[152px] w-[100%] flex-col items-center justify-center border-l-gray-100 bg-[#EFEFF8] text-center ">
-          <div className="xlg:w-[80%] flex h-[100%] w-[90%] flex-col items-start  justify-center gap-[16px] text-start">
+          <div className="flex h-[100%] w-[90%] flex-col items-start justify-center  gap-[16px] text-start xlg:w-[80%]">
             <h1 className=" h-[24px] font-Barlow text-[18px] font-bold text-black">
               Search for blogs
             </h1>
@@ -47,7 +46,7 @@ export default async function blog() {
         </div>
       </div>
       <div className=" flex w-[100%] flex-col items-center justify-center bg-white pb-[32px] pt-[32px] text-center ">
-        <Topics />
+        <Topics allBlogs={allBlogs} />
       </div>
     </>
   );
