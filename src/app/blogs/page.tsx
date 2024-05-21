@@ -28,7 +28,7 @@ export default async function Blog() {
   return (
     <>
       <div>
-        <div className="  inset-0 flex h-[250px] flex-col items-center justify-center  overflow-hidden text-center  xlg:h-[300px] ">
+        <div className="inset-0 flex h-[250px] flex-col items-center justify-center  overflow-hidden text-center  xlg:h-[300px] ">
           <HeroComponent heroInputs={bodyInputs} />
         </div>
       </div>

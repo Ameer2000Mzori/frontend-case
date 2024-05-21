@@ -38,15 +38,16 @@ export default async function Blog({ ...params }: { params: { id: string; search
   return (
     <>
       <div>
-        <div className="  inset-0 flex h-[250px] flex-col items-center justify-center gap-2 overflow-hidden text-center  xlg:h-[300px] ">
+        <div className="inset-0 flex h-[250px] flex-col items-center justify-center  overflow-hidden text-center  xlg:h-[300px]">
           <HeroComponent heroInputs={bodyInputs} />
         </div>
       </div>
-      <div className=" flex w-[100%] flex-col items-center justify-center bg-white pb-[32px] pt-[32px] text-center ">
+      <div className=" flex w-[100%] flex-col items-center justify-center gap-[32px] bg-white pb-[32px]  text-center ">
         <TopicsButtons />
       </div>
       <div className="flex h-[auto] w-[100%]  flex-row flex-wrap justify-center gap-[15px] bg-white">
-        <div className="flex w-[80%] flex-row  flex-wrap justify-center gap-[31px]">
+        <div className="flex min-h-[100vh] w-[80%] flex-row  flex-wrap justify-center gap-[31px]">
+          {blogs?.length == 0 && <h1>there is no blogs</h1>}
           {blogs?.map((blog) => {
             return (
               <Link rel="stylesheet" href={`/blog/${blog._id}`}>
