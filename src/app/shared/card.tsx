@@ -5,8 +5,6 @@ import Image from 'next/image';
 import Badge from './badge';
 
 export default function BlogCard({ cardData }: any) {
-  // console.log('this is card data ', cardData.categories);
-
   return (
     <>
       <div className=" flex h-[440px] w-[349px] cursor-pointer flex-col  gap-[24px] text-start">

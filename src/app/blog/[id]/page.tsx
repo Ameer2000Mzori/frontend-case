@@ -26,14 +26,11 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
 
   const cardData = await PreprSdk.oneBlog({ id: params.id });
 
-  console.log('this is card data', cardData.Blog);
-
   if (cardsResponse?.Similar_Blogs?.items) {
     cardsData = cardsResponse.Similar_Blogs.items;
   }
 
   bodyInputs.image = cardData.Blog?.banner_image?.url;
-  // console.log('everything is here', cardsData);
 
   return (
     <div>
