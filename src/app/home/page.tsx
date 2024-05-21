@@ -28,7 +28,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      <div className=" xlg:h-[600px] mt-[1px] flex h-[300px]  flex-col items-center justify-center gap-2 overflow-hidden border-t border-white text-center">
+      <div className=" mt-[1px] flex h-[300px] flex-col  items-center justify-center gap-2 overflow-hidden border-t border-white text-center xlg:h-[600px]">
         <HeroComponent heroInputs={bodyInputs} />
       </div>
       <div className="bg-white">

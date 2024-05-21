@@ -5,28 +5,40 @@ import Image from 'next/image';
 import Badge from 'app/shared/badge';
 import Cards from 'app/shared/cardsList';
 import { HeroComponent } from 'app/shared/heroComponent';
+import BlogImg from 'public/blog_img.webp';
 
 import { PreprSdk } from '@/src/server/prepr';
 
+const bodyInputs: pagesTypes = {
+  image: '',
+  title: '',
+  description: '',
+};
+
 export default async function BlogPost({ params }: { params: { id: string } }) {
-  console.log('this is params', params);
+  // console.log('this is params', params);
 
   let cardsData: Array<any> = [];
   const cardsResponse = await PreprSdk.relatedBlog({
     similarBlogsId: params.id,
     limit: 3,
   });
+
+  const cardData = await PreprSdk.oneBlog({ id: params.id });
+
+  console.log('this is card data', cardData.Blog);
+
   if (cardsResponse?.Similar_Blogs?.items) {
     cardsData = cardsResponse.Similar_Blogs.items;
   }
 
-  const blogsInputs = 'blog';
+  bodyInputs.image = cardData.Blog?.banner_image?.url;
   // console.log('everything is here', cardsData);
 
   return (
     <div>
       <div className=" flex h-[300px]  flex-col items-center justify-center gap-2 overflow-hidden  text-center">
-        <HeroComponent heroInputs={blogsInputs} />
+        <HeroComponent heroInputs={bodyInputs} />
       </div>
 
       <div className=" flex h-[auto] w-[100%] flex-col items-center justify-start bg-white pb-[80px]  text-start text-[#0E1527]">
@@ -35,7 +47,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
             <Badge Input="INTERVIEW" />
           </div>
           <h2 className=" title-text w-[100%] text-[35px] leading-[56px] xlg:w-[70%] xlg:text-[48px]">
-            H2 - Working at 2DIGITS, according to developer Ryence
+            {cardData.Blog?.title}
           </h2>
 
           <p className="description-text mt-[32px] w-[90%] xlg:w-[82%] ">
@@ -105,8 +117,8 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
             <li>At elementum eu facilisis sed odio morbi quis commodo.</li>
           </ul>
 
-          <div className="mt-[32px] h-[250px] xlg:h-[617px] xlg:w-[823px] ">
-            <Image className=" h-[100%] w-[100%] object-cover object-center" alt="blog_image" />
+          <div className=" mt-[32px] flex  h-[250px]  items-center justify-center text-center xlg:h-[617px] xlg:w-[823px] ">
+            IMAGE
           </div>
 
           <h1 className=" title-text mt-[32px] w-[90%] font-Barlow text-[30px] xlg:w-[70%]">

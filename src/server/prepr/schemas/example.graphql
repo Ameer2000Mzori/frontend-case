@@ -33,33 +33,6 @@ query latestBlogs($skip: Int, $limit: Int) {
   }
 }
 
-query relatedBlog($similarBlogsId: String!, $limit: Int) {
-  Similar_Blogs(id: $similarBlogsId, limit: $limit) {
-    items {
-      title
-      _id
-      banner_image {
-        url
-      }
-      categories {
-        body
-      }
-    }
-  }
-}
-
-query search_Blogs($where: BlogWhereInput) {
-  Blogs(where: $where) {
-    items {
-      title
-      _id
-      banner_image {
-        url
-      }
-    }
-  }
-}
-
 query search_tag($where: BlogWhereInput, $limit: Int) {
   Blogs(where: $where, limit: $limit) {
     items {
@@ -71,6 +44,34 @@ query search_tag($where: BlogWhereInput, $limit: Int) {
       categories {
         body
         slug
+      }
+    }
+  }
+}
+
+query oneBlog($id: String!) {
+  Blog(id: $id) {
+    _id
+    title
+    categories {
+      body
+    }
+    banner_image {
+      url
+    }
+  }
+}
+
+query relatedBlog($similarBlogsId: String!, $limit: Int) {
+  Similar_Blogs(id: $similarBlogsId, limit: $limit) {
+    items {
+      title
+      _id
+      banner_image {
+        url
+      }
+      categories {
+        body
       }
     }
   }

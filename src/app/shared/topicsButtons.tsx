@@ -21,7 +21,7 @@ export const TopicsButtons = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Link rel="stylesheet" href={`/blogs/id?search=${searchTerm}`}>
+            <Link className="h-[100%]" rel="stylesheet" href={`/blogs/id?search=${searchTerm}`}>
               <button
                 type="submit"
                 className="h-[100%] w-[112px] rounded-[3px]  bg-[#371172] text-white">
