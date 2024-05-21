@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Badge from './badge';
 
 export default function BlogCard({ cardData }: any) {
-  // console.log('this is card data ', cardData.categories);
+  console.log('this is card data ', cardData.categories);
+
   return (
     <>
       <div className=" flex h-[440px] w-[349px] cursor-pointer flex-col  gap-[24px] text-start">
@@ -14,7 +15,6 @@ export default function BlogCard({ cardData }: any) {
             layout="fill"
             objectFit="cover"
             objectPosition="center"
-            // className="-z-20 h-[100%] w-[100%] bg-center object-cover "
             src={cardData.banner_image.url}
             alt="card image"
             className=" h-[100%] w-[100%] object-cover"
@@ -27,8 +27,8 @@ export default function BlogCard({ cardData }: any) {
           </div>
         </div>
 
-        <div className=" flex flex-col items-start justify-between gap-[14px] text-start">
-          <h2 className="h-[50px] w-[100%] font-Barlow text-[21px] font-bold leading-[23px]">
+        <div className=" flex flex-col items-start justify-between gap-[14px] text-start text-[#0E1527]">
+          <h2 className="h-[50px] w-[100%] overflow-hidden font-Barlow text-[21px] font-bold leading-[23px]">
             {cardData.title}
           </h2>
 

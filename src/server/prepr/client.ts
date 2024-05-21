@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { createFetch } from 'ofetch';
 
 import config from '@/graphql.config.json';

@@ -8,7 +8,7 @@ import { pagesTypes } from 'app/types/pagesTypes';
 import { TopicsButtons } from '@/src/app/shared/topicsButtons';
 import { PreprSdk } from '@/src/server/prepr';
 
-import BlogCard from '../shared/card';
+import BlogCard from '../../shared/card';
 
 const bodyInputs: pagesTypes = {
   image: '',
@@ -16,9 +16,11 @@ const bodyInputs: pagesTypes = {
   description: '',
 };
 
-export default async function Blog() {
+export default async function Blog({ params }: { params: { id: string } }) {
+  console.log('this is params', params);
+
   const response = await PreprSdk.pages({ id: '3837c994-0641-410f-bad5-c907db5f35a8' });
-  const blogTagResponse = await PreprSdk.search_tag({ where: { _tags_any: null } });
+  const blogTagResponse = await PreprSdk.search_tag({ where: { _tags_any: params.id } });
   const blogs = blogTagResponse?.Blogs?.items;
 
   bodyInputs.title = response?.Page?.page_header?.title;
