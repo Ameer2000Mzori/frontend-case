@@ -54,8 +54,8 @@ export default async function Blog() {
             );
           })}
         </div>
-        <Pagination blogsTotal={blogsTotal} />
       </div>
+      <Pagination pagBlogs={blogsTotal} />
     </>
   );
 }

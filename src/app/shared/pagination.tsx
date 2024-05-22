@@ -2,41 +2,35 @@
 
 import React, { useEffect, useState } from 'react';
 
-export const Pagination = ({ pagBlogs, itemsPerPage = 9, onPageChange }: any) => {
+export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    const newTotalPages = Math.ceil(pagBlogs.length / itemsPerPage);
+    const newTotalPages = Math.ceil(pagBlogs / itemsPerPage);
     setTotalPages(newTotalPages);
+    console.log(totalPages);
   }, [pagBlogs, itemsPerPage]);
 
-  const handlePageChange = (newPage) => {
-    if (newPage > 0 && newPage <= totalPages) {
-      setCurrentPage(newPage);
-      // Call the provided onPageChange function if available
-      onPageChange?.(newPage);
-    }
-  };
-
-  const renderPaginationButtons = () => {
-    const buttons = [];
-    for (let i = 1; i <= totalPages; i++) {
-      buttons.push(
-        <button
-          key={i}
-          onClick={() => handlePageChange(i)}
-          className={`pagination-button ${currentPage === i ? 'active' : ''}`}>
-          {i}
+  const setButtons = () => {
+    let Buttons = [];
+    for (let i = 0; i < totalPages; i++) {
+      Buttons.push(
+        <button className="bg-black" onClick={() => handlePageChange(i + 1)}>
+          {i + 1}
         </button>,
       );
     }
-    return buttons;
+    return Buttons;
   };
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = Math.min(startIndex + itemsPerPage, pagBlogs.length);
-  const currentBlogSlice = pagBlogs.slice(startIndex, endIndex);
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
-  return <div className="pagination">{renderPaginationButtons()}</div>;
+  useEffect(() => {
+    console.log('current page is : ', currentPage);
+  }, [currentPage]);
+
+  return <div>{totalPages <= 1 ? '' : setButtons()}</div>;
 };

@@ -9,6 +9,7 @@ import { TopicsButtons } from '@/src/app/shared/topicsButtons';
 import { PreprSdk } from '@/src/server/prepr';
 
 import BlogCard from '../../shared/card';
+import { Pagination } from '../../shared/pagination';
 
 const bodyInputs: pagesTypes = {
   image: '',
@@ -34,6 +35,7 @@ export default async function Blog({ ...params }: { params: { id: string; search
   });
 
   const blogs = blogTagResponse?.Blogs?.items;
+  const blogsTotal = blogTagResponse?.Blogs?.total;
 
   bodyInputs.title = response?.Page?.page_header?.title;
   bodyInputs.description = response?.Page?.page_header?.text;
@@ -65,6 +67,7 @@ export default async function Blog({ ...params }: { params: { id: string; search
           })}
         </div>
       </div>
+      <Pagination pagBlogs={blogsTotal} />
     </>
   );
 }
