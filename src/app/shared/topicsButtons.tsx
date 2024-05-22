@@ -13,7 +13,7 @@ export const TopicsButtons = () => {
   const searchTerm = useSelector((state: any) => state.search.searchTerm);
   let category = useSelector((state: any) => state.search.category);
   if (category === '' || category === undefined || category === null) category = 'id';
-  console.log('this is from RTK', category, searchTerm);
+  // console.log('this is from RTK', category, searchTerm);
 
   const handleSearchChange = (e: any) => {
     dispatch(setSearchTerm(e.target.value));
@@ -57,22 +57,46 @@ export const TopicsButtons = () => {
         <h1 className="font-Barlow text-[18px] font-bold leading-[24px] text-[#0e1527]">Topics</h1>
         <div className="flex flex-row items-center justify-center gap-[8px] text-center">
           <Link rel="stylesheet" href={`/blogs/id?search=${searchTerm}`}>
-            <button className="topic-btn-styles" onClick={() => handleCategoryChange('id')}>
+            <button
+              style={{
+                backgroundColor: category === 'id' ? '#371172' : undefined,
+                color: category === 'id' ? 'white' : undefined,
+              }}
+              className="topic-btn-styles"
+              onClick={() => handleCategoryChange('id')}>
               ALL BLOGS
             </button>
           </Link>
           <Link href={`/blogs/${'interview'}?search=${searchTerm}`}>
-            <button className="topic-btn-styles" onClick={() => handleCategoryChange('interview')}>
+            <button
+              className="topic-btn-styles"
+              style={{
+                backgroundColor: category === 'interview' ? '#371172' : undefined,
+                color: category === 'interview' ? 'white' : undefined,
+              }}
+              onClick={() => handleCategoryChange('interview')}>
               INTERVIEW
             </button>
           </Link>
           <Link href={`/blogs/${'blog'}?search=${searchTerm}`}>
-            <button className="topic-btn-styles" onClick={() => handleCategoryChange('blog')}>
+            <button
+              style={{
+                backgroundColor: category === 'blog' ? '#371172' : undefined,
+                color: category === 'blog' ? 'white' : undefined,
+              }}
+              className="topic-btn-styles"
+              onClick={() => handleCategoryChange('blog')}>
               BLOG
             </button>
           </Link>
           <Link href={`/blogs/${'whitepaper'}?search=${searchTerm}`}>
-            <button className="topic-btn-styles" onClick={() => handleCategoryChange('whitepaper')}>
+            <button
+              style={{
+                backgroundColor: category === 'whitepaper' ? '#371172' : undefined,
+                color: category === 'whitepaper' ? 'white' : undefined,
+              }}
+              className="topic-btn-styles"
+              onClick={() => handleCategoryChange('whitepaper')}>
               WHITEPAPER
             </button>
           </Link>

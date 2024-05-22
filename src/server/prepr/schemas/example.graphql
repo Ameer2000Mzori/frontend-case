@@ -33,8 +33,8 @@ query latestBlogs($skip: Int, $limit: Int) {
   }
 }
 
-query search_tag($where: BlogWhereInput, $limit: Int) {
-  Blogs(where: $where, limit: $limit) {
+query search_blog($where: BlogWhereInput, $limit: Int, $skip: Int) {
+  Blogs(where: $where, limit: $limit, skip: $skip) {
     items {
       title
       _id
