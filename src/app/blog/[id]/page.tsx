@@ -33,7 +33,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
 
   return (
     <div>
-      <div className=" flex h-[300px]  flex-col items-center justify-center gap-2 overflow-hidden  text-center">
+      <div className=" flex h-[452px]  flex-col items-center justify-center gap-2 overflow-hidden  text-center">
         <HeroComponent heroInputs={bodyInputs} />
       </div>
 
