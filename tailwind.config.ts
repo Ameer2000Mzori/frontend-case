@@ -10,6 +10,7 @@ const config = withTV({
     fontFamily: {
       Barlow: ['Barlow'],
       firaSans: ['"Fira Sans"', 'sans-serif'],
+      Roboto: ['Roboto', 'sans-serif'],
     },
     extend: {
       screens: {
