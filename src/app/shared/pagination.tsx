@@ -37,7 +37,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
                 backgroundColor: currentPage === i ? '#371162' : '',
                 color: currentPage === i ? 'white' : '',
               }}
-              className="mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
+              className="pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
               onClick={() => handlePageChange(i + 1)}>
               {i + 1}
             </button>,
@@ -49,7 +49,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
           Buttons.push(
             <span
               key={`dots${i}`}
-              className="mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]">
+              className=" pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]">
               ...
             </span>,
           );
@@ -64,7 +64,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
               backgroundColor: currentPage === i ? '#371162' : '',
               color: currentPage === i ? 'white' : '',
             }}
-            className="mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
+            className=" pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
             onClick={() => handlePageChange(i + 1)}>
             {i + 1}
           </button>,
@@ -106,7 +106,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
     <div className="">
       {totalPages > 1 && (
         <div className="flex w-[100%] flex-row items-center justify-center bg-white pb-[80px] pt-[80px] text-center">
-          <button className="  mr-[40px] leading-[26px]" onClick={backWardPage}>
+          <button className=" pagi-Buttons  mr-[40px] leading-[26px]" onClick={backWardPage}>
             <img
               width="24"
               height="24"
@@ -115,7 +115,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
             />
           </button>
           {setButtons()}
-          <button className=" ml-[25px]  leading-[26px] " onClick={forWardPage}>
+          <button className=" pagi-Buttons ml-[25px]  leading-[26px] " onClick={forWardPage}>
             <img
               width="24"
               height="24"

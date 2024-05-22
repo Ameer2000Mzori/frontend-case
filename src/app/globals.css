@@ -118,3 +118,19 @@ body {
     font-size: 11px;
   }
 }
+
+@media screen and (max-width: 1150px) {
+  .pagi-Buttons {
+    display: none;
+  }
+
+  .pagi-Main-Buttons {
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] */
