@@ -1,7 +1,8 @@
 // 'use client';
-
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+
+import StoreProvider from 'app/StoreProvider';
 
 import 'app/globals.css';
 
@@ -17,18 +18,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div>
-          <Header />
-        </div>
+    <StoreProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <div>
+            <Header />
+          </div>
 
-        {children}
+          {children}
 
-        <div>
-          <Footer />
-        </div>
-      </body>
-    </html>
+          <div>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

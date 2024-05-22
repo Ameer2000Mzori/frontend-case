@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
+import SearchComponent from './searchTermsLogic';
+
 export const TopicsButtons = () => {
   const [searchTerm, setSearchTerm] = useState('');
   return (
@@ -48,6 +50,7 @@ export const TopicsButtons = () => {
             <button className="topic-btn-styles">WHITEPAPER</button>
           </Link>
         </div>
+        <SearchComponent />
       </div>
     </>
   );

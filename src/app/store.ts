@@ -1,12 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from 'app/features/sreachTerms/searchTerm'; // Adjust the path
-import { createWrapper } from 'next-redux-wrapper';
+import searchTermSliceReducer from 'app/lib/features/counter/searchTerm';
 
-const makeStore = () =>
-  configureStore({
+export const makeStore = () => {
+  return configureStore({
     reducer: {
-      counter: counterReducer,
+      search: searchTermSliceReducer,
     },
   });
+};
 
-export const wrapper = createWrapper(makeStore);
+// Infer the type of makeStore
+export type AppStore = ReturnType<typeof makeStore>;
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<AppStore['getState']>;
+export type AppDispatch = AppStore['dispatch'];
