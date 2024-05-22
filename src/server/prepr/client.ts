@@ -2,7 +2,7 @@ import 'server-only';
 
 import { createFetch } from 'ofetch';
 
-import config from '../../../graphql.config.json';
+import config from '@/graphql.config.json';
 
 /** Ofetch instance for the Prepr GraphQL API. */
 export const gqlClient = createFetch({

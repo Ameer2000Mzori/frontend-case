@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,3 +30,107 @@ body {
     text-wrap: balance;
   }
 }
+
+/*  header */
+
+.header-bg-gradient-radial-right {
+  /* background-image: radial-gradient(circle, #020365 0%, #01041f 99.95%); */
+  background-position: 300px;
+  background-size: cover;
+}
+
+.nav-text {
+  font-size: 18px;
+  font-family: Barlow, 'Courier New', monospace;
+  line-height: 24px;
+  font-style: bold;
+  font-weight: 600;
+}
+
+.nav-text-logo {
+  font-size: 38px;
+  height: 28px;
+  font-family: Barlow, 'Courier New', monospace;
+  line-height: 24px;
+  font-style: bold;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 1150px) {
+  .nav-text-logo {
+    font-size: 25px;
+    height: 28px;
+    font-family: Barlow, 'Courier New', monospace;
+
+    font-style: bold;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+}
+
+/*  titles and texts  */
+
+.title-text {
+  font-family: Barlow, 'Courier New', monospace;
+  font-weight: 700;
+  color: #0e1527;
+}
+
+.description-text {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+  color: #0e1527;
+}
+
+/*   components image styling  */
+
+.styled-image {
+  z-index: -20;
+  height: 100%;
+  width: 100%;
+  background-position: top;
+  object-fit: cover;
+}
+
+/* topics buttons style */
+
+.topic-btn-styles {
+  border-radius: 4px;
+  border: 1px solid #efeff8;
+  background-color: #ffffff;
+  padding: 4px 16px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #0e1527;
+}
+
+@media screen and (max-width: 1150px) {
+  .topic-btn-styles {
+    border-radius: 4px;
+    border: 1px solid #efeff8;
+    background-color: #ffffff;
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .pagi-Buttons {
+    display: none;
+  }
+
+  .pagi-Main-Buttons {
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] */
