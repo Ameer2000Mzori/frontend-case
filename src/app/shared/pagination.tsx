@@ -2,9 +2,23 @@
 
 import React, { useEffect, useState } from 'react';
 
+import { useRouter } from 'next/navigation';
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setCurrentPage } from '../lib/features/counter/searchTerm';
+
 export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
   const [totalPages, setTotalPages] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
+  //   const [currentPage, setCurrentPage] = useState(0);
+
+  const dispatch = useDispatch();
+  const searchTerm = useSelector((state: any) => state.search.searchTerm);
+  let category = useSelector((state: any) => state.search.category);
+  let currentPage = useSelector((state: any) => state.search.currentPage);
+  if (category === '' || category === undefined || category === null) category = 'id';
+
+  const router = useRouter();
 
   useEffect(() => {
     const newTotalPages = Math.ceil(pagBlogs / itemsPerPage);
@@ -61,24 +75,30 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
   };
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page - 1);
+    router.push(`/blogs/${category}?search=${searchTerm}?page=${page - 1}?`);
+    dispatch(setCurrentPage(page - 1));
   };
 
   // forward page:
   const forWardPage = () => {
     if (currentPage === totalPages - 1) {
-      setCurrentPage(0);
+      dispatch(setCurrentPage(0));
+      router.push(`/blogs/${category}?search=${searchTerm}?page=${0}?`);
     } else {
-      setCurrentPage(currentPage + 1);
+      dispatch(setCurrentPage(currentPage + 1));
+
+      router.push(`/blogs/${category}?search=${searchTerm}?page=${currentPage + 1}?`);
     }
   };
 
   // back ward page:
   const backWardPage = () => {
     if (currentPage === 0) {
-      setCurrentPage(totalPages - 1);
+      dispatch(setCurrentPage(totalPages - 1));
+      router.push(`/blogs/${category}?search=${searchTerm}?page=${totalPages - 1}?`);
     } else {
-      setCurrentPage(currentPage - 1);
+      dispatch(setCurrentPage(currentPage - 1));
+      router.push(`/blogs/${category}?search=${searchTerm}?page=${currentPage - 1}?`);
     }
   };
 
@@ -86,7 +106,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
     <div className="">
       {totalPages > 1 && (
         <div className="flex w-[100%] flex-row items-center justify-center bg-white pb-[80px] pt-[80px] text-center">
-          <button className="mr-[40px] leading-[26px]" onClick={backWardPage}>
+          <button className="  mr-[40px] leading-[26px]" onClick={backWardPage}>
             <img
               width="24"
               height="24"
@@ -95,7 +115,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
             />
           </button>
           {setButtons()}
-          <button className="ml-[25px] leading-[26px]" onClick={forWardPage}>
+          <button className=" ml-[25px]  leading-[26px] " onClick={forWardPage}>
             <img
               width="24"
               height="24"

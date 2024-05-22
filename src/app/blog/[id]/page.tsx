@@ -15,8 +15,6 @@ const bodyInputs: pagesTypes = {
 };
 
 export default async function BlogPost({ params }: { params: { id: string } }) {
-  // console.log('this is params', params);
-
   let cardsData: Array<any> = [];
   const cardsResponse = await PreprSdk.relatedBlog({
     similarBlogsId: params.id,

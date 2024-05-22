@@ -6,22 +6,23 @@ import Link from 'next/link';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setCate, setSearchTerm } from '../lib/features/counter/searchTerm';
+import { setCate, setCurrentPage, setSearchTerm } from '../lib/features/counter/searchTerm';
 
 export const TopicsButtons = () => {
   const dispatch = useDispatch();
   const searchTerm = useSelector((state: any) => state.search.searchTerm);
   let category = useSelector((state: any) => state.search.category);
   if (category === '' || category === undefined || category === null) category = 'id';
-  // console.log('this is from RTK', category, searchTerm);
 
   const handleSearchChange = (e: any) => {
     dispatch(setSearchTerm(e.target.value));
+    dispatch(setCurrentPage(0));
   };
 
   const handleCategoryChange = (data: any) => {
     if (data === '' || data === undefined || data === null) data = 'id';
     dispatch(setCate(data));
+    dispatch(setCurrentPage(0));
   };
 
   return (

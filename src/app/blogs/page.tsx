@@ -26,8 +26,6 @@ export default async function Blog() {
   });
   const blogs = blogTagResponse?.Blogs?.items;
   const blogsTotal = blogTagResponse?.Blogs?.total;
-  console.log(blogsTotal);
-  // console.log('this is pageBlogs', pageBlogs);
 
   bodyInputs.title = response?.Page?.page_header?.title;
   bodyInputs.description = response?.Page?.page_header?.text;

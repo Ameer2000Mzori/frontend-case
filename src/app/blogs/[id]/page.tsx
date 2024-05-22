@@ -10,6 +10,7 @@ import { PreprSdk } from '@/src/server/prepr';
 
 import BlogCard from '../../shared/card';
 import { Pagination } from '../../shared/pagination';
+import { GetCurrentPage } from '../getPage';
 
 const bodyInputs: pagesTypes = {
   image: '',
@@ -17,21 +18,44 @@ const bodyInputs: pagesTypes = {
   description: '',
 };
 
-export default async function Blog({ ...params }: { params: { id: string; search: string } }) {
-  // console.log('params', params);
+function extractValues(url) {
+  const firstWordMatch = url.match(/^[^?]+/); // Match everything up to the first `?`
+  const filteredSearch = firstWordMatch ? firstWordMatch[0] : null;
+
+  const queryParamMatch = url.match(/=(.*?)\?/); // Match everything between `=` and `?`
+  const queryParam = queryParamMatch ? queryParamMatch[1] : null;
+
+  return { filteredSearch, queryParam };
+}
+
+export default async function Blog({
+  ...params
+}: {
+  params: { id: string };
+  searchParams: { search: string };
+}) {
   let { id } = params.params;
   let { search } = params.searchParams;
-  // console.log('this ', id, search);
+
+  let { filteredSearch, queryParam } = extractValues(search);
+
+  // let newSearch =
+
+  if (queryParam === 0) {
+    queryParam = 0;
+  } else {
+    queryParam = queryParam * 9;
+  }
 
   if (id === 'id') id = null;
 
-  if (search === '' || search === undefined) search = null;
+  if (search === '' || search === undefined) filteredSearch = null;
 
   const response = await PreprSdk.pages({ id: '3837c994-0641-410f-bad5-c907db5f35a8' });
   const blogTagResponse = await PreprSdk.search_blog({
-    where: { _tags_any: id, _search: search },
+    where: { _tags_any: id, _search: filteredSearch },
     limit: 9,
-    skip: 0,
+    skip: queryParam,
   });
 
   const blogs = blogTagResponse?.Blogs?.items;

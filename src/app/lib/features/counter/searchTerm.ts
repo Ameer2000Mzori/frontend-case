@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   searchTerm: '',
   category: '',
+  currentPage: 0,
 };
 
 const searchTermSlice = createSlice({
@@ -12,15 +13,16 @@ const searchTermSlice = createSlice({
   reducers: {
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
-      console.log('new searchterm', state.searchTerm);
     },
     setCate: (state, action) => {
       state.category = action.payload;
-      console.log('new category ', state.category);
+    },
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
     },
   },
 });
 
-export const { setSearchTerm, setCate } = searchTermSlice.actions;
+export const { setSearchTerm, setCate, setCurrentPage } = searchTermSlice.actions;
 
 export default searchTermSlice.reducer;
