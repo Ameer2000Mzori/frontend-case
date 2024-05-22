@@ -68,7 +68,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
               backgroundColor: currentPage === i ? '#371162' : '',
               color: currentPage === i ? 'white' : '',
             }}
-            className="pagi-Main-Buttons mr-[15px] w-[500] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
+            className="pagi-Main-Buttons mr-[15px]  rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
             onClick={() => handlePageChange(i + 1)}>
             {i + 1}
           </button>,
