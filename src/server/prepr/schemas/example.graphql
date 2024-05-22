@@ -46,6 +46,7 @@ query search_blog($where: BlogWhereInput, $limit: Int, $skip: Int) {
         slug
       }
     }
+    total
   }
 }
 
