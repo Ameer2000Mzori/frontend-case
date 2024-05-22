@@ -10,7 +10,6 @@ import { setCurrentPage } from '../lib/features/counter/searchTerm';
 
 export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
   const [totalPages, setTotalPages] = useState(0);
-  //   const [currentPage, setCurrentPage] = useState(0);
 
   const dispatch = useDispatch();
   const searchTerm = useSelector((state: any) => state.search.searchTerm);
@@ -29,7 +28,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
     let Buttons = [];
     if (totalPages > 5) {
       for (let i = 0; i < totalPages; i++) {
-        if (i < 3 || i === totalPages - 1 || (i >= currentPage - 1 && i <= currentPage + 1)) {
+        if (i < 2 || i === totalPages - 1 || (i >= currentPage - 1 && i <= currentPage + 1)) {
           Buttons.push(
             <button
               key={i}
@@ -42,14 +41,19 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
               {i + 1}
             </button>,
           );
-        } else if (
-          (i === 3 && currentPage > 2) ||
-          (i === totalPages - 2 && currentPage < totalPages - 4)
-        ) {
+        } else if (i === 2 && currentPage > 3) {
           Buttons.push(
             <span
               key={`dots${i}`}
-              className=" pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]">
+              className="pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]">
+              ...
+            </span>,
+          );
+        } else if (i === totalPages - 2 && currentPage < totalPages - 3) {
+          Buttons.push(
+            <span
+              key={`dots${i}`}
+              className="pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]">
               ...
             </span>,
           );
@@ -64,7 +68,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
               backgroundColor: currentPage === i ? '#371162' : '',
               color: currentPage === i ? 'white' : '',
             }}
-            className=" pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
+            className="pagi-Main-Buttons mr-[15px] rounded-[4px] pb-[8px] pl-[17px] pr-[17px] pt-[10px] text-[14px] text-[#141414]"
             onClick={() => handlePageChange(i + 1)}>
             {i + 1}
           </button>,
@@ -79,7 +83,6 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
     dispatch(setCurrentPage(page - 1));
   };
 
-  // forward page:
   const forWardPage = () => {
     if (currentPage === totalPages - 1) {
       dispatch(setCurrentPage(0));
@@ -91,7 +94,6 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
     }
   };
 
-  // back ward page:
   const backWardPage = () => {
     if (currentPage === 0) {
       dispatch(setCurrentPage(totalPages - 1));
@@ -106,7 +108,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
     <div className="">
       {totalPages > 1 && (
         <div className="flex w-[100%] flex-row items-center justify-center bg-white pb-[80px] pt-[80px] text-center">
-          <button className=" pagi-Buttons  mr-[40px] leading-[26px]" onClick={backWardPage}>
+          <button className="pagi-Buttons mr-[40px] leading-[26px]" onClick={backWardPage}>
             <img
               width="24"
               height="24"
@@ -115,7 +117,7 @@ export const Pagination = ({ pagBlogs, itemsPerPage = 9 }) => {
             />
           </button>
           {setButtons()}
-          <button className=" pagi-Buttons ml-[25px]  leading-[26px] " onClick={forWardPage}>
+          <button className="pagi-Buttons ml-[25px] leading-[26px]" onClick={forWardPage}>
             <img
               width="24"
               height="24"
