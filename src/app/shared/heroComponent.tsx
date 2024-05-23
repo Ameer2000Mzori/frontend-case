@@ -9,7 +9,7 @@ type HeroComponentProps = {
 };
 
 function extractValues(title: string) {
-  const upperCasedTitle = title.toUpperCase(); // Match everything up to the first `?`
+  const upperCasedTitle = title.toUpperCase();
 
   return { upperCasedTitle };
 }

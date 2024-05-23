@@ -14,6 +14,12 @@ const bodyInputs: pagesTypes = {
   description: '',
 };
 
+function extractValues(title: string) {
+  const upperCasedTitle = title.toUpperCase();
+
+  return { upperCasedTitle };
+}
+
 export default async function BlogPost({ params }: { params: { id: string } }) {
   let cardsData: Array<any> = [];
   const cardsResponse = await PreprSdk.relatedBlog({
@@ -29,6 +35,10 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
 
   bodyInputs.image = cardData.Blog?.banner_image?.url;
 
+  const aboutBadge = cardData.Blog?.categories[0]?.body;
+
+  const { upperCasedTitle } = extractValues(aboutBadge);
+
   return (
     <div>
       <div className=" flex h-[452px]  flex-col items-center justify-center gap-2 overflow-hidden  text-center">
@@ -38,7 +48,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
       <div className=" flex h-[auto] w-[100%] flex-col items-center justify-start bg-white pb-[80px]  text-start text-[#0E1527]">
         <div className=" mt-[55px] flex h-[auto] w-[90%] flex-col items-start justify-start pt-[15px] text-start text-[0E1527] xlg:w-[80%]">
           <div className=" relative  h-[32px] bg-white">
-            <Badge Input="INTERVIEW" />
+            <Badge Input={upperCasedTitle} />
           </div>
           <h2 className=" title-text w-[100%] text-[35px] leading-[56px] xlg:w-[70%] xlg:text-[48px]">
             {cardData.Blog?.title}
