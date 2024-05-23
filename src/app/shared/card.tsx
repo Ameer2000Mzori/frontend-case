@@ -20,7 +20,7 @@ export default function BlogCard({ cardData }: any) {
 
           <div className="pl-[8px]">
             {cardData.categories.map((category: any) => {
-              return <Badge Input={category.body} />;
+              return <Badge bageInputs={category.body} />;
             })}
           </div>
         </div>
