@@ -2,14 +2,14 @@ import React from 'react';
 
 import Link from 'next/link';
 
+import BlogCard from 'app/shared/card';
+import extractValues from 'app/shared/extractValues';
 import { HeroComponent } from 'app/shared/heroComponent';
+import { Pagination } from 'app/shared/pagination';
 import { pagesTypes } from 'app/types/pagesTypes';
 
 import { TopicsButtons } from '@/src/app/shared/topicsButtons';
 import { PreprSdk } from '@/src/server/prepr';
-
-import BlogCard from '../../shared/card';
-import { Pagination } from '../../shared/pagination';
 
 const bodyInputs: pagesTypes = {
   image: '',
@@ -17,20 +17,10 @@ const bodyInputs: pagesTypes = {
   description: '',
 };
 
-function extractValues(url) {
-  const firstWordMatch = url.match(/^[^?]+/); // Match everything up to the first `?`
-  const filteredSearch = firstWordMatch ? firstWordMatch[0] : null;
-
-  const queryParamMatch = url.match(/=(.*?)\?/); // Match everything between `=` and `?`
-  const queryParam = queryParamMatch ? queryParamMatch[1] : null;
-
-  return { filteredSearch, queryParam };
-}
-
 export default async function Blog({
   ...params
 }: {
-  params: { id: string };
+  params: { id: any };
   searchParams: { search: string };
 }) {
   let { id } = params.params;

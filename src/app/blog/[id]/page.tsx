@@ -3,10 +3,10 @@ import React from 'react';
 import Badge from 'app/shared/badge';
 import Cards from 'app/shared/cardsList';
 import { HeroComponent } from 'app/shared/heroComponent';
+import toUpperCaseValues from 'app/shared/upperCaseText';
+import { pagesTypes } from 'app/types/pagesTypes';
 
 import { PreprSdk } from '@/src/server/prepr';
-
-import { pagesTypes } from '../../types/pagesTypes';
 
 const bodyInputs: pagesTypes = {
   image: '',
@@ -14,14 +14,8 @@ const bodyInputs: pagesTypes = {
   description: '',
 };
 
-function extractValues(title: string) {
-  const upperCasedTitle = title.toUpperCase();
-
-  return { upperCasedTitle };
-}
-
 export default async function BlogPost({ params }: { params: { id: string } }) {
-  let cardsData: Array<any> = [];
+  let cardsData: Array<String> = [];
   const cardsResponse = await PreprSdk.relatedBlog({
     similarBlogsId: params.id,
     limit: 3,
@@ -35,9 +29,9 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
 
   bodyInputs.image = cardData.Blog?.banner_image?.url;
 
-  const aboutBadge = cardData.Blog?.categories[0]?.body;
+  const aboutBadge: String = cardData.Blog?.categories[0]?.body;
 
-  const { upperCasedTitle } = extractValues(aboutBadge);
+  const { upperCasedTitle } = toUpperCaseValues(aboutBadge);
 
   return (
     <div>

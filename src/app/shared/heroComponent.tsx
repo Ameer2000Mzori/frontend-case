@@ -4,17 +4,14 @@ import Image from 'next/image';
 
 import { pagesTypes } from 'app/types/pagesTypes';
 
+import toUpperCaseValues from './upperCaseText';
+
 type HeroComponentProps = {
   heroInputs: pagesTypes;
 };
 
-function extractValues(title: string) {
-  const upperCasedTitle = title.toUpperCase();
-
-  return { upperCasedTitle };
-}
 export const HeroComponent: React.FC<HeroComponentProps> = ({ heroInputs }) => {
-  const { upperCasedTitle } = extractValues(heroInputs.title);
+  const { upperCasedTitle } = toUpperCaseValues(heroInputs.title);
 
   return (
     <>
