@@ -10,6 +10,7 @@ type HeroComponentProps = {
   heroInputs: pagesTypes;
 };
 
+// this is hero component, where we use it in three pages to see images and title of page, and text.
 export const HeroComponent: React.FC<HeroComponentProps> = ({ heroInputs }) => {
   const { upperCasedTitle } = toUpperCaseValues(heroInputs.title);
 

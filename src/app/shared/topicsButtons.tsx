@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setCate, setCurrentPage, setSearchTerm } from '../lib/features/counter/searchTerm';
 
+// this is topic buttons, with search input and button too.
 export const TopicsButtons = () => {
   const dispatch = useDispatch();
   const searchTerm = useSelector((state: any) => state.search.searchTerm);

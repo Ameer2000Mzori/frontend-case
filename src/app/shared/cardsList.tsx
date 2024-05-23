@@ -4,6 +4,9 @@ import Link from 'next/link';
 
 import BlogCard from './card';
 
+/* this is list of 3 cards only  for new blogs (home page)
+or and recommendation (when user click a blog ) */
+
 export default async function Cards({ title, cardsData }: any) {
   return (
     <div className=" flex h-[auto] w-[100%] flex-col  items-center  justify-center pb-[75px]  pt-[15px] xlg:h-[690px] xlg:p-0">
