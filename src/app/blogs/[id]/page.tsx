@@ -10,7 +10,6 @@ import { PreprSdk } from '@/src/server/prepr';
 
 import BlogCard from '../../shared/card';
 import { Pagination } from '../../shared/pagination';
-import { GetCurrentPage } from '../getPage';
 
 const bodyInputs: pagesTypes = {
   image: '',
@@ -38,8 +37,6 @@ export default async function Blog({
   let { search } = params.searchParams;
 
   let { filteredSearch, queryParam } = extractValues(search);
-
-  // let newSearch =
 
   if (queryParam === 0) {
     queryParam = 0;
