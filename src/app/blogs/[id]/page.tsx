@@ -28,7 +28,7 @@ export default async function Blog({
 
   let { filteredSearch, queryParam } = extractValues(search);
 
-  queryParam === 0 ? (queryParam = 0) : (queryParam = queryParam * 1);
+  queryParam === 0 ? (queryParam = 0) : (queryParam = queryParam * 9);
 
   id === 'id' && (id = null);
 
