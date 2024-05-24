@@ -28,13 +28,9 @@ export default async function Blog({
 
   let { filteredSearch, queryParam } = extractValues(search);
 
-  if (queryParam === 0) {
-    queryParam = 0;
-  } else {
-    queryParam = queryParam * 9;
-  }
+  queryParam === 0 ? (queryParam = 0) : (queryParam = queryParam + 1);
 
-  if (id === 'id') id = null;
+  id === 'id' && (id = null);
 
   if (search === '' || search === undefined) filteredSearch = null;
 
